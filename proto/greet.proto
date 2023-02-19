@@ -7,9 +7,9 @@ package greet_service;
 service GreetService{
     rpc SayHello(NoParam) returns (HelloResponse);
 
-    rpc SayHelloServerStreaming(NameList) returns (stream HelloResponse);
+    rpc SayHelloServerStreaming(NamesList) returns (stream HelloResponse);
 
-    rpc SayHelloClientStreaming(stream HelloRequest) returns (MessageList);
+    rpc SayHelloClientStreaming(stream HelloRequest) returns (MessagesList);
 
     rpc SayHelloBidirectionalStreaming(stream HelloRequest) returns (stream HelloResponse);
 }
@@ -25,10 +25,10 @@ message HelloRequest{
     string name = 1;
 }
 
-message NameList{
-    repeated string name = 1;
+message NamesList{
+    repeated string names = 1;
 }
 
-message MessageList{
-    repeated string message = 1;
+message MessagesList{
+    repeated string messages = 1;
 }
